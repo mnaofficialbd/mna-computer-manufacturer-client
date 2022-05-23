@@ -1,9 +1,36 @@
 import React from 'react';
+import { useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import auth from '../../Firebase/firebase.init';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const SocialLogin = () => {
+
+    const [signInWithGoogle, googleUser] = useSignInWithGoogle(auth);
+    const [signInWithGithub, githubUser] = useSignInWithGithub(auth);
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+    if (googleUser || githubUser) {
+        navigate(from, { replace: true })
+    }
+
     return (
+
         <div>
-            <h2>Social Signup</h2>
+            <div className="divider my-2">OR</div>
+            <button
+                onClick={() => signInWithGoogle()}
+                className="btn btn-outline border-fuchsia-400  w-full max-w-xs my-2">
+                <div><img className='w-50 mx-2' src="https://i.ibb.co/JqhBJYJ/google.png" alt="" /></div>
+                Login with Google
+            </button>
+            <button
+                onClick={() => signInWithGithub()}
+                className="btn btn-outline border-fuchsia-400 w-full max-w-xs my-2">
+                <div><img className='w-50 mx-2' src="https://i.ibb.co/3Wjh3wv/github.png" alt="" /></div>
+                Login with Github
+            </button>
         </div>
     );
 };
