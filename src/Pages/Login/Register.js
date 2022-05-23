@@ -37,7 +37,7 @@ const Register = () => {
                                     })} />
                             </label>
                             <label>
-                                {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
+                                {errors.name?.type === 'required' && <span className="label-text-alt text-red-700">{errors.name.message}</span>}
                             </label>
                         </div>
                         <div className="form-control w-full max-w-xs my-3">
@@ -56,8 +56,8 @@ const Register = () => {
                                     })} />
                             </label>
                             <label>
-                                {errors.email?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
-                                {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
+                                {errors.email?.type === 'required' && <span className="label-text-alt text-red-700">{errors.email.message}</span>}
+                                {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-700">{errors.email.message}</span>}
                             </label>
                         </div>
                         <div className="form-control w-full max-w-xs my-3">
@@ -76,8 +76,8 @@ const Register = () => {
                                     })} />
                             </label>
                             <label>
-                                {errors.password?.type === 'required' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
-                                {errors.password?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
+                                {errors.password?.type === 'required' && <span className="label-text-alt text-red-700">{errors.password.message}</span>}
+                                {errors.password?.type === 'pattern' && <span className="label-text-alt text-red-700">{errors.password.message}</span>}
                             </label>
                         </div>
                         <input className='btn w-full max-w-xs text-white' type="submit" value='Register' />
