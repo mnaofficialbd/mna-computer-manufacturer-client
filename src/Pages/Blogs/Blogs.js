@@ -4,7 +4,7 @@ const Blogs = () => {
     return (
         <section className='my-8'>
             <div className='mb-5'>
-                <h2 className='text-3xl text-center text-blue-700'>Blogs: (Question Answer)</h2>
+                <h2 className='text-3xl text-center text-blue-700 font-semibold'>Blogs: (Question Answer)</h2>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-8'>
                 <div className="card lg:max-w-lg bg-base-100 shadow-xl">
