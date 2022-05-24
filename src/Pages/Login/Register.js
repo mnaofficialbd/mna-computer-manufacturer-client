@@ -1,4 +1,3 @@
-// import { createUserWithEmailAndPassword } from 'firebase/auth';
 import React from 'react';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
