@@ -14,6 +14,7 @@ const SocialLogin = () => {
     if (googleUser || githubUser) {
         navigate(from, { replace: true })
     }
+    console.log(googleUser);
 
     return (
 
