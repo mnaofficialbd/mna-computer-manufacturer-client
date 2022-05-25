@@ -1,0 +1,84 @@
+[
+    {
+        "id": 1,
+        "name": "Yamaha R15 V3 Indian 155cc",
+        "img": "https://i.ibb.co/GM8z4sC/1hhdg.png",
+        "description": "This is mmmmmm",
+        "minimum": "20",
+        "price": "430"
+    },
+    {
+        "id": 2,
+        "name": "Yamaha MT 15 Indonesian 150cc",
+        "img": "https://i.ibb.co/GM8z4sC/1hhdg.png",
+        "description": "This is k",
+        "minimum": "10",
+        "price": "475"
+    },
+    {
+        "id": 3,
+        "name": "Suzuki GSX-R (Non-ABS) 150cc",
+        "img": "https://i.ibb.co/GM8z4sC/1hhdg.png",
+        "description": "This is t",
+        "minimum": "30",
+        "price": "380"
+    },
+    {
+        "id": 4,
+        "name": "Yamaha R15 V3 Indonesian 155cc",
+        "img": "https://i.ibb.co/GM8z4sC/1hhdg.png",
+        "description": "This is s",
+        "minimum": "40",
+        "price": "475"
+    },
+    {
+        "id": 5,
+        "name": "Bajaj Pulsar NS160 ABS (Carburetor)",
+        "img": "https://i.ibb.co/GM8z4sC/1hhdg.png",
+        "description": "This is ko",
+        "minimum": "50",
+        "price": "219"
+    },
+    {
+        "id": 6,
+        "name": "Yamaha XSR-155 Indonesian",
+        "img": "./images/6.jpeg",
+        "price": "485"
+    },
+    {
+        "id": 7,
+        "name": "Electric Bike Dragon-43CC",
+        "img": "./images/7.jpeg",
+        "price": "47"
+    },
+    {
+        "id": 8,
+        "name": "Bajaj Discover 110cc Single Disc",
+        "img": "./images/8.jpeg",
+        "price": "120"
+    },
+    {
+        "id": 9,
+        "name": "Honda Livo 109.51 cc",
+        "img": "./images/9.jpeg",
+        "price": "108"
+    },
+    {
+        "id": 10,
+        "name": "Honda CB Shine SP 124.7 cc",
+        "img": "./images/10.jpeg",
+        "price": "126"
+    },
+    {
+        "id": 11,
+        "name": "Honda CBR 150R",
+        "img": "./images/11.jpg",
+        "price": "450"
+    },
+    {
+        "id": 12,
+        "name": "HONDA CB Hornet 160R CBS 162.71CC",
+        "img": "./images/12.jpeg",
+        "price": "189"
+    }
+]

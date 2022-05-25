@@ -9,9 +9,9 @@ const InfoFooter = () => {
                 background: `url(https://i.ibb.co/MVHdJ1d/bg-2.png)`,
                 backgroundSize: 'cover'
             }}
-            class="footer p-10 bg-base-200 text-white ">
+            className="footer p-10 bg-base-200 text-white ">
             <div>
-                <span class="text-yellow-500 font-bold text-xl"> CONTACT INFO :</span>
+                <span className="text-yellow-500 font-bold text-xl"> CONTACT INFO :</span>
 
                 <p><FontAwesomeIcon className='mx-2' icon={faLocationDot}></FontAwesomeIcon>Raozan, Chittagong, Bangladesh.</p>
                 <p><FontAwesomeIcon className='mx-2' icon={faEnvelope}></FontAwesomeIcon>mna.officialbd92@gmail.com</p>
@@ -19,13 +19,13 @@ const InfoFooter = () => {
                 <p><FontAwesomeIcon className='mx-2' icon={faGlobe}></FontAwesomeIcon>https://mnacomputermanuf.com</p>
             </div>
             <div>
-                <span class="text-yellow-500 font-bold text-xl"> OPEN HOURS :</span>
+                <span className="text-yellow-500 font-bold text-xl"> OPEN HOURS :</span>
                 <p><FontAwesomeIcon className='mx-2' icon={faClock}></FontAwesomeIcon>Mon-Sat : 8:00am - 5:00pm</p>
                 <p><FontAwesomeIcon className='mx-2' icon={faShopSlash}></FontAwesomeIcon>Sunday is closed</p>
             </div>
             <div>
-                <span class="text-yellow-500 font-bold text-xl"> FOLLOW US :</span>
-                <div class="grid grid-flow-col gap-4">
+                <span className="text-yellow-500 font-bold text-xl"> FOLLOW US :</span>
+                <div className="grid grid-flow-col gap-4">
                     <a href="https://www.facebook.com/mnaofficialbd">
                         <img className='mx-3' style={{ height: '40px', width: '40px' }} src='https://i.ibb.co/SBMtMC1/facebook.png' alt="" />
                     </a>
@@ -37,7 +37,7 @@ const InfoFooter = () => {
                     </a>
                 </div>
 
-                <div class="grid grid-flow-col gap-4">
+                <div className="grid grid-flow-col gap-4">
                     <a href="https://mnaofficialbd.wordpress.com/">
                         <img className='mx-3' style={{ height: '40px', width: '40px' }} src='https://i.ibb.co/JqhBJYJ/google.png' alt="" />
                     </a>
@@ -48,7 +48,7 @@ const InfoFooter = () => {
 
             </div>
             <div>
-                <span class="text-yellow-500 font-bold text-xl"> PAY WITH :</span>
+                <span className="text-yellow-500 font-bold text-xl"> PAY WITH :</span>
                 <div>
                     <img style={{ height: '120px', width: '100px' }} src='https://i.ibb.co/cYd6mBQ/paymentmethod.png' alt="" />
                 </div>

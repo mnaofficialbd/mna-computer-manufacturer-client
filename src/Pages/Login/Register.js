@@ -25,9 +25,9 @@ const Register = () => {
                     <h2 className="text-center text-2xl text-blue-600 font-bold">Please Register</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-control w-full max-w-xs my-3">
-                            <label class="input-group">
+                            <label className="input-group">
                                 <span>Name</span>
-                                <input type="text" placeholder="Your Name" class="input input-bordered w-full max-w-xs"
+                                <input type="text" placeholder="Your Name" className="input input-bordered w-full max-w-xs"
                                     {...register("name", {
                                         required: {
                                             value: true,
@@ -40,9 +40,9 @@ const Register = () => {
                             </label>
                         </div>
                         <div className="form-control w-full max-w-xs my-3">
-                            <label class="input-group">
+                            <label className="input-group">
                                 <span>Email</span>
-                                <input type="email" placeholder="Email Address" class="input input-bordered w-full max-w-xs"
+                                <input type="email" placeholder="Email Address" className="input input-bordered w-full max-w-xs"
                                     {...register("email", {
                                         required: {
                                             value: true,
@@ -60,9 +60,9 @@ const Register = () => {
                             </label>
                         </div>
                         <div className="form-control w-full max-w-xs my-3">
-                            <label class="input-group">
+                            <label className="input-group">
                                 <span>Password</span>
-                                <input type="password" placeholder="Password" class="input input-bordered w-full max-w-xs"
+                                <input type="password" placeholder="Password" className="input input-bordered w-full max-w-xs"
                                     {...register("password", {
                                         required: {
                                             value: true,

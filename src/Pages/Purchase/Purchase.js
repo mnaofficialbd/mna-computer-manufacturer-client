@@ -1,17 +1,14 @@
 import React from 'react';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import auth from '../../Firebase/firebase.init';
 
 const Purchase = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
-    const [
-        createUserWithEmailAndPassword,
-        user] = useCreateUserWithEmailAndPassword(auth);
+    const [ user] = useAuthState(auth);
 
     const onSubmit = async data => {
-        await createUserWithEmailAndPassword(data.email, data.password);
-        console.log(data.email, data.password, data.name);
+        await console.log(data.email, data.password);
     };
     console.log(user);
     return (
@@ -22,9 +19,9 @@ const Purchase = () => {
                     <form onSubmit={handleSubmit(onSubmit)}>
                         {/* name Field */}
                         <div className="form-control w-full max-w-xs my-3">
-                            <label class="input-group">
+                            <label className="input-group">
                                 <span>Name</span>
-                                <input type="text" placeholder="Your Name" class="input input-bordered w-full max-w-xs"
+                                <input type="text" placeholder="Your Name" className="input input-bordered w-full max-w-xs"
                                     {...register("name", {
                                         required: {
                                             value: true,
@@ -38,19 +35,9 @@ const Purchase = () => {
                         </div>
                         {/* Email Field */}
                         <div className="form-control w-full max-w-xs my-3">
-                            <label class="input-group">
+                            <label className="input-group">
                                 <span>Email</span>
-                                <input type="email" placeholder="Email Address" class="input input-bordered w-full max-w-xs"
-                                    {...register("email", {
-                                        required: {
-                                            value: true,
-                                            message: 'Provide your email'
-                                        },
-                                        pattern: {
-                                            value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
-                                            message: 'Provide a valid Email'
-                                        }
-                                    })} />
+                                <input type="email" value={user?.email} name='email' placeholder="Email Address" className="input input-bordered w-full max-w-xs" required readOnly />
                             </label>
                             <label>
                                 {errors.email?.type === 'required' && <span className="label-text-alt text-red-700">{errors.email.message}</span>}
@@ -59,9 +46,9 @@ const Purchase = () => {
                         </div>
                         {/* number Field */}
                         <div className="form-control w-full max-w-xs my-3">
-                            <label class="input-group">
+                            <label className="input-group">
                                 <span>Phone</span>
-                                <input type="number" placeholder="Phone Number" class="input input-bordered w-full max-w-xs"
+                                <input type="number" placeholder="Phone Number" className="input input-bordered w-full max-w-xs"
                                     {...register("phone", {
                                         required: {
                                             value: true,
@@ -80,9 +67,9 @@ const Purchase = () => {
                         </div>
                         {/* Address Field */}
                         <div className="form-control w-full max-w-xs my-3">
-                            <label class="input-group">
+                            <label className="input-group">
                                 <span>Address</span>
-                                <input type="text" placeholder="Address" class="input input-bordered w-full max-w-xs"
+                                <textarea type="text" placeholder="Address" className="input input-bordered w-full max-w-xs"
                                     {...register("address", {
                                         required: {
                                             value: true,
