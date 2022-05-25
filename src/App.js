@@ -16,6 +16,7 @@ import ManageProducts from './Pages/Dashboard/ManageProducts';
 import ManageAllOrders from './Pages/Dashboard/ManageAllOrders';
 import AddAProduct from './Pages/Dashboard/AddAProduct';
 import MakeAdmin from './Pages/Dashboard/MakeAdmin';
+import RequireAuth from './Pages/Login/RequireAuth';
 
 function App() {
   return (
@@ -23,7 +24,9 @@ function App() {
       <Navbar/>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='purchase' element={<Purchase />} />
+
+          <Route path='purchase' element={<RequireAuth><Purchase /></RequireAuth>} />
+
           <Route path='dashboard' element={<Dashboard />} >
             <Route index element={<MyProfile/>} />
             <Route path='myOrders' element={<MyOrders/>} />
