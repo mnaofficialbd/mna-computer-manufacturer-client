@@ -5,12 +5,13 @@ import auth from '../../Firebase/firebase.init';
 
 const Purchase = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
-    const [ user] = useAuthState(auth);
+    const [user] = useAuthState(auth);
 
     const onSubmit = async data => {
         await console.log(data.email, data.password);
     };
     console.log(user);
+
     return (
         <div className='flex justify-center items-center h-screen'>
             <div className="card w-96 bg-base-100 shadow-xl">
@@ -21,27 +22,15 @@ const Purchase = () => {
                         <div className="form-control w-full max-w-xs my-3">
                             <label className="input-group">
                                 <span>Name</span>
-                                <input type="text" placeholder="Your Name" className="input input-bordered w-full max-w-xs"
-                                    {...register("name", {
-                                        required: {
-                                            value: true,
-                                            message: 'Provide your name'
-                                        }
-                                    })} />
-                            </label>
-                            <label>
-                                {errors.name?.type === 'required' && <span className="label-text-alt text-red-700">{errors.name.message}</span>}
+                                <input type="text" value={user?.displayName} name='name' className="input input-bordered w-full max-w-xs" readOnly />
                             </label>
                         </div>
                         {/* Email Field */}
                         <div className="form-control w-full max-w-xs my-3">
                             <label className="input-group">
                                 <span>Email</span>
-                                <input type="email" value={user?.email} name='email' placeholder="Email Address" className="input input-bordered w-full max-w-xs" required readOnly />
-                            </label>
-                            <label>
-                                {errors.email?.type === 'required' && <span className="label-text-alt text-red-700">{errors.email.message}</span>}
-                                {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-700">{errors.email.message}</span>}
+                                <input type="email" value={user?.email} name='email' className="input input-bordered w-full max-w-xs" 
+                                readOnly />
                             </label>
                         </div>
                         {/* number Field */}
@@ -69,7 +58,7 @@ const Purchase = () => {
                         <div className="form-control w-full max-w-xs my-3">
                             <label className="input-group">
                                 <span>Address</span>
-                                <textarea type="text" placeholder="Address" className="input input-bordered w-full max-w-xs"
+                                <textarea type="text" placeholder="Address" className="textarea textarea-bordered w-full max-w-xs"
                                     {...register("address", {
                                         required: {
                                             value: true,

@@ -1,22 +1,26 @@
+import { updateProfile } from 'firebase/auth';
 import React from 'react';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import auth from '../../Firebase/firebase.init';
+import Loading from '../Shared/Loading';
 import SocialLogin from './SocialLogin';
 
 const Register = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
-    const [
-        createUserWithEmailAndPassword,
-        user] = useCreateUserWithEmailAndPassword(auth);
+    const [createUserWithEmailAndPassword, user, loading] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+    const [updateProfile, updating] = useUpdateProfile(auth);
 
-    const onSubmit = async data => {
+    const onSubmit = async (data) => {
+        data.preventDefault();
         await createUserWithEmailAndPassword(data.email, data.password);
-        console.log(data.email, data.password, data.name);
+        await updateProfile({ displayName: data.name })
     };
     console.log(user);
-
+    if (loading || updating) {
+        <Loading />
+    }
 
     return (
         <div className='flex justify-center items-center h-screen'>

@@ -2,11 +2,12 @@ import React from 'react';
 import { useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase/firebase.init';
 import { useLocation, useNavigate } from 'react-router-dom';
+import Loading from '../Shared/Loading';
 
 const SocialLogin = () => {
 
-    const [signInWithGoogle, googleUser] = useSignInWithGoogle(auth);
-    const [signInWithGithub, githubUser] = useSignInWithGithub(auth);
+    const [signInWithGoogle, googleUser, googleLoading] = useSignInWithGoogle(auth);
+    const [signInWithGithub, githubUser, githubLoading] = useSignInWithGithub(auth);
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -14,7 +15,9 @@ const SocialLogin = () => {
     if (googleUser || githubUser) {
         navigate(from, { replace: true })
     }
-    console.log(googleUser);
+    if (googleLoading || githubLoading) {
+        <Loading />
+    }
 
     return (
 

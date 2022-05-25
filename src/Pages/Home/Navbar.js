@@ -11,7 +11,6 @@ const Navbar = () => {
     }
     const navLinks = <>
         <li><NavLink to='/' className='rounded-lg  '>Home</NavLink></li>
-        <li><NavLink to='/purchase' className='rounded-lg  '>Purchase</NavLink></li>
         <li><NavLink to='/dashboard' className='rounded-lg  '>Dashboard</NavLink></li>
         <li><NavLink to='/myPortfolio' className='rounded-lg  '>My Portfolio</NavLink></li>
         <li><NavLink to='/blogs' className='rounded-lg  '>Blogs</NavLink></li>
@@ -20,7 +19,6 @@ const Navbar = () => {
             user ? <button className='btn btn-NavLink btn-outline  text-decoration-none fs-5' onClick={handleSignOut}>Sign out</button> : (<NavLink to='/login' className='rounded-lg  '>Login</NavLink>)
         }
         </li>
-        {/* <li><NavLink to='/login' className='rounded-lg  '>Login</NavLink></li> */}
     </>
 
     return (

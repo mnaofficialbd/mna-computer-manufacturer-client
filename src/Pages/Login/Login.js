@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import SocialLogin from './SocialLogin';
 import auth from '../../Firebase/firebase.init';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import Loading from '../Shared/Loading';
 
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -21,8 +22,8 @@ const Login = () => {
         navigate(from, { replace: true });
     }
     if (loading) {
-        return <p>Loading...</p>
-    };
+        <Loading />
+    }
     if (error) {
         errorElement = <p className='text-yellow-600'> <small>{error?.message}</small> </p>
     }
