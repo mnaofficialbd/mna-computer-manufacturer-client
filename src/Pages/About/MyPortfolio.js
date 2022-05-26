@@ -11,7 +11,7 @@ const MyPortfolio = () => {
                         <table class="table w-full">
                             {<thead>
                                 <div>
-                                    <img className='h-32 w-24 rounded' src="https://i.ibb.co/M9NFR3K/20211227-124649.jpg" alt="" />
+                                    <img className='h-32 w-28 rounded' src="https://i.ibb.co/M9NFR3K/20211227-124649.jpg" alt="" />
                                     <h2 className='text-xl font-semibold'>Mohammad Nurul Azam</h2>
                                     <h3 className='text-blue-600'>mna.official92@gmail.com</h3>
                                 </div>
@@ -25,7 +25,7 @@ const MyPortfolio = () => {
                                     <th>Education</th>
                                     <td>
                                         Bachelor of Business Studies (BBS) <br />
-                                        1st year: Running (2020-21)
+                                        1st year (2020-21): Continue
                                     </td>
                                 </tr>
                                 <tr>
@@ -40,9 +40,10 @@ const MyPortfolio = () => {
                                 <tr>
                                     <th>My project</th>
                                     <td>
-                                        <Link to='/' className='mx-2 text-'>Project 1</Link> <br />
-                                        <Link to='/' className='mx-2 text-'>Project 2</Link> <br />
-                                        <Link to='/' className='mx-2 text-'>Project 3</Link> 
+                                        <a href="https://mna-cars-warehouse.web.app/" className='mx-2 text-'>Project 1: <span className='text-blue-500'>MNA Cars Warehouse</span> </a> <br />
+                                        <a href="https://mna-munna-photographer.web.app/" className='mx-2 text-'>Project 2: <span className='text-blue-500'>MNA Munna Photographer</span> </a> <br />
+                                        <a href="https://mna-bike-bazar.netlify.app/" className='mx-2 text-'>Project 3: <span className='text-blue-500'>MNA Bike Bazar</span> </a> 
+                                        
                                     </td>
                                 </tr>
 
