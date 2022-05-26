@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const MyPortfolio = () => {
     return (
@@ -12,20 +11,21 @@ const MyPortfolio = () => {
                             {<thead>
                                 <div>
                                     <img className='h-32 w-28 rounded' src="https://i.ibb.co/M9NFR3K/20211227-124649.jpg" alt="" />
-                                    <h2 className='text-xl font-semibold'>Mohammad Nurul Azam</h2>
-                                    <h3 className='text-blue-600'>mna.official92@gmail.com</h3>
+                                    <h2 className='text-2xl font-semibold'>Mohammad Nurul Azam</h2>
+                                    <h3 className='text-blue-600 text-xl'>mna.official92@gmail.com</h3>
                                 </div>
                                 <tr>
                                    <th></th>
                                     <th ></th>
                                 </tr>
                             </thead>}
-                            <tbody>
+                            <tbody className='text-xl'>
                                 <tr>
                                     <th>Education</th>
                                     <td>
-                                        Bachelor of Business Studies (BBS) <br />
-                                        1st year (2020-21): Continue
+                                        Bachelor of Business Studies (BBS). <br />
+                                        1st year (2020-21): Continue. <br />
+                                        National University. 
                                     </td>
                                 </tr>
                                 <tr>

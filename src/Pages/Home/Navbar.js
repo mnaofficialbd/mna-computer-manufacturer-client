@@ -10,13 +10,13 @@ const Navbar = () => {
         signOut(auth)
     }
     const navLinks = <>
-        <li><NavLink to='/' className='rounded-lg  '>Home</NavLink></li>
-        <li><NavLink to='/dashboard' className='rounded-lg  '>Dashboard</NavLink></li>
-        <li><NavLink to='/myPortfolio' className='rounded-lg  '>My Portfolio</NavLink></li>
-        <li><NavLink to='/blogs' className='rounded-lg  '>Blogs</NavLink></li>
+        <li><NavLink to='/' className='rounded-lg text-xl '>Home</NavLink></li>
+        <li><NavLink to='/dashboard' className='rounded-lg text-xl '>Dashboard</NavLink></li>
+        <li><NavLink to='/myPortfolio' className='rounded-lg text-xl '>My Portfolio</NavLink></li>
+        <li><NavLink to='/blogs' className='rounded-lg text-xl '>Blogs</NavLink></li>
         <li>
         {
-            user ? <button className='btn btn-NavLink btn-outline  text-decoration-none fs-5' onClick={handleSignOut}>Sign out</button> : (<NavLink to='/login' className='rounded-lg  '>Login</NavLink>)
+            user ? <button className='btn btn-NavLink btn-outline  text-decoration-none fs-5' onClick={handleSignOut}>Sign out</button> : (<NavLink to='/login' className='rounded-lg text-xl '>Login</NavLink>)
         }
         </li>
     </>

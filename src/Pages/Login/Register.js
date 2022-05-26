@@ -1,8 +1,7 @@
-import { updateProfile } from 'firebase/auth';
 import React from 'react';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../Firebase/firebase.init';
 import Loading from '../Shared/Loading';
 import SocialLogin from './SocialLogin';
@@ -12,10 +11,15 @@ const Register = () => {
     const [createUserWithEmailAndPassword, user, loading] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const [updateProfile, updating] = useUpdateProfile(auth);
 
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+
     const onSubmit = async (data) => {
-        data.preventDefault();
+        // data.preventDefault();
         await createUserWithEmailAndPassword(data.email, data.password);
-        await updateProfile({ displayName: data.name })
+        await updateProfile({ displayName: data.name });
+        navigate(from, { replace: true })
     };
     console.log(user);
     if (loading || updating) {
