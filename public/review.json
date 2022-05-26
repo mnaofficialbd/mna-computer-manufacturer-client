@@ -1,9 +1,51 @@
 [
     {
-        "name": "Yamaha R15 V3 Indian 155cc",
-        "img": "https://i.ibb.co/GM8z4sC/1hhdg.png",
-        "description": "This is mmmmmm",
-        "minimum": "20",
-        "price": "430"
+      "name": "Munna",
+      "review": "Last year. i was bought a graphics card. The graphics card  is very well.",
+      "ratings": 5,
+      "img": "https://edtimes.in/wp-content/uploads/2020/01/images-6-2.jpg"
+    },
+    {
+      "name": "Nurul",
+      "review": "MNA Computer manufacturer is a trasted manufacturer company",
+      "ratings": 4,
+      "img": "https://m.surrogatefinder.com/Photo/small_couples_e70b4e8119cbd0cb57dec0b19c8c1c88.jpg"
+    },
+    {
+      "name": "Azam",
+      "review": "An intoxicating blend of performance and affordable pricing, but if you want as much capacity as possible for as cheaply as possible.",
+      "ratings": 4.5,
+      "img": "https://bindblottyandcajole.files.wordpress.com/2015/06/single-indian-men.jpg"
+    },
+    {
+      "name": "Ariyan",
+      "review": "Best Keyboard its amazing product wow",
+      "ratings": 3,
+      "img": "https://image1.masterfile.com/getImage/NjU1LTA4MzU2ODgxZW4uMDAwMDAwMDA=AG7IBE/655-08356881en_Masterfile.jpg"
+    },
+    {
+      "name": "Rafi",
+      "review": "New laptops with AMD's Ryzen 7 6800U CPU have arrived. Let's see how this low-power processor stacks up against the current and previous silicon generations from both AMD and Intel.",
+      "ratings": 3.7,
+      "img": "https://static.toiimg.com/imagenext/toiblogs/photo/blogs/wp-content/uploads/2019/10/IMG_0794.jpg"
+    },
+    {
+      "name": "Mohammad Roman",
+      "review": "The numbers from Mercury Research indicate PC demand is cooling. Nevertheless, AMD's market share of the x86 CPU market continued to grow.",
+      "ratings": 4.9,
+      "img": "https://previews.123rf.com/images/hecke/hecke1504/hecke150400004/38423341-indian-people.jpg"
+    },
+    {
+      "name": "Atik Islam",
+      "review": "The Best Gaming Mouse. Everyone Can Buy Today",
+      "ratings": 4.8,
+      "img": "https://media.zigcdn.com/media/user/2022/Apr/gurukiranyadav89020227813368.jpg"
+    },
+    {
+      "name": "Masud Khan",
+      "review": "the best webcam for most people",
+      "ratings": 5,
+      "img": "https://media.zigcdn.com/media/user/2020/Jun/hatsoffthamizhan20201981881.jpg"
     }
-]
+  ]
+  
