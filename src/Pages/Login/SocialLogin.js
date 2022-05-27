@@ -8,7 +8,6 @@ const SocialLogin = () => {
 
     const [signInWithGoogle, googleUser, googleLoading] = useSignInWithGoogle(auth);
     const [signInWithGithub, githubUser, githubLoading] = useSignInWithGithub(auth);
-
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
@@ -18,7 +17,7 @@ const SocialLogin = () => {
     if (googleLoading || githubLoading) {
         <Loading />
     }
-
+    
     return (
 
         <div>

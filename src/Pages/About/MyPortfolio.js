@@ -6,8 +6,8 @@ const MyPortfolio = () => {
             <div className="card  bg-base-100 shadow-xl">
                 <div className="card-body">
                     <h2 className='text-center text-green-500 text-2xl'>My Portfolio</h2>
-                    <div class="overflow-x-auto">
-                        <table class="table w-full">
+                    <div className="overflow-x-auto">
+                        <table className="table w-full">
                             {<thead>
                                 <div>
                                     <img className='h-32 w-28 rounded' src="https://i.ibb.co/M9NFR3K/20211227-124649.jpg" alt="" />

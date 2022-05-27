@@ -12,10 +12,10 @@ const Review = () => {
             </div>
             <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mx-8'>
                 {
-                    reviews?.slice(0, 6).map(review => <div className="card lg:max-w-lg bg-base-100 shadow-xl">
+                    reviews?.slice(0, 6).map(review => <div key={review._id} className="card lg:max-w-lg bg-base-100 shadow-xl">
 
-                        <div class="avatar m-5 ">
-                            <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                        <div className="avatar m-5 ">
+                            <div className="w-20 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                                 <img src={review.img} alt="" />
                             </div>
                         </div>
