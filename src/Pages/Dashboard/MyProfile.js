@@ -1,15 +1,22 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useUpdateProfile } from 'react-firebase-hooks/auth';
+
 import { useForm } from 'react-hook-form';
 import auth from '../../Firebase/firebase.init';
 
 const MyProfile = () => {
     const [user] = useAuthState(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
-    const onSubmit = async data => {
-        data.preventDefault();
-        // await createUserWithEmailAndPassword(data.email, data.password);
-        console.log(data.email, data.password, data.name);
+    const [updateProfile] = useUpdateProfile(auth);
+
+    const onSubmit = async (data) => {
+        await updateProfile({ 
+            phoneNumber: data.phone,
+            education: data.education,
+            address: data.address,
+            linkedin: data.linkedIn,
+        });
     };
 
     return (
