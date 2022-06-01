@@ -4,7 +4,7 @@ import React from 'react';
 const MakeAdminPanel = ({ user, index, refetch }) => {
     // const { email, role } = user;
     /* const handleMakeAdmin = () => {
-        fetch(`https://mna-computer-manufacturer.herokuapp.com/user/admin/${email}`, {
+        fetch(`http://localhost:5000/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

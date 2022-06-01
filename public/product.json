@@ -3,7 +3,8 @@
         "name": "Processor",
         "img": "https://i.ibb.co/cJFZP6d/processor.jpg",
         "description": "Intel 9th Gen Core i5-9500 Processor (Tray)",
-        "minimum": "200",
+        "minimum": "50",
+        "available": "10000",
         "price": "13K"
     },
     {
@@ -11,34 +12,39 @@
         "img": "https://i.ibb.co/5v0y9S4/graphices.jpg",
         "description": "Gigabyte AORUS GeForce RTX 3080 MASTER 12GB GDDR6X Graphics Card",
         "minimum": "100",
+        "available": "12000",
         "price": "205K"
     },
     {
         "name": "Solid State Drive (SSD)",
         "img": "https://i.ibb.co/0QjddL7/ssd.jpg",
         "description": "GP-GSTFS31120GNTD. Gigabyte 120GB",
-        "minimum": "120",
+        "minimum": "150",
+        "available": "17000",
         "price": "1.9K"
     },
     {
         "name": "Multimedia Keyboard",
         "img": "https://i.ibb.co/M6ghxVY/keyboard.jpg",
         "description": "USB type HAVIT HV-KB327 Multimedia Keyboard",
-        "minimum": "10",
+        "minimum": "200",
+        "available": "42000",
         "price": "400"
     },
     {
         "name": "Optical Mouse",
         "img": "https://i.ibb.co/KmGCCWB/mouse.jpg",
         "description": "MotoSpeed F303 USB Optical Mouse",
-        "minimum": "250",
+        "minimum": "500",
+        "available": "450300",
         "price": "280"
     },
     {
         "name": "Webcam",
         "img": "https://i.ibb.co/WBwhz6n/webcam.jpg",
         "description": "Logitech C505 High-Definition Webcam",
-        "minimum": "50",
+        "minimum": "100",
+        "available": "230700",
         "price": "4.6K"
     },
     {
@@ -46,6 +52,7 @@
         "img": "https://i.ibb.co/dgnQpPT/Cable.jpg",
         "description": "Desktop VGA Cable 1.5M",
         "minimum": "500",
+        "available": "425500",
         "price": "200"
     },
     {
@@ -53,6 +60,7 @@
         "img": "https://i.ibb.co/XFCmrNQ/headphone.jpg",
         "description": "Havit H2168d 3.5mm USB Gaming headphone",
         "minimum": "300",
+        "available": "950700",
         "price": "1.2K"
     }
     

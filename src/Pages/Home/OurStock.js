@@ -3,7 +3,7 @@ import React from 'react';
 const OurStock = () => {
     return (
         <div className='justify-center items-center mt-10 mb-12'>
-            <h2 className='text-3xl text-center text-orange-500 font-bold mb-4'>Our Available Product</h2>
+            <h2 className='text-4xl text-center text-orange-500 font-bold mb-4'>Our Available Product</h2>
             <div className="card border mx-10 bg-base-100 shadow-xl justify-center items-center">
                 <div className="card-body">
                     <div >

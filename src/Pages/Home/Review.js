@@ -8,7 +8,7 @@ const Review = () => {
     return (
         <section className='my-8'>
             <div className='mb-5'>
-                <h2 className='text-3xl text-center text-orange-500 font-bold'>Reviews</h2>
+                <h2 className='text-4xl text-center text-orange-500 font-bold'>Reviews</h2>
             </div>
             <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mx-8'>
                 {
