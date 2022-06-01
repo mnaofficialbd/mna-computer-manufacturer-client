@@ -16,7 +16,7 @@ const AddAReview = () => {
         <div className='flex justify-center items-center mt-10'>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body">
-                    <h2 className='text-center text-green-500 text-2xl'>Add Review</h2>
+                    <h2 className='text-center text-green-500 text-4xl font-semibold'>Add A Review</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-control w-full max-w-xs my-3">
                             <label className="input-group">

@@ -52,7 +52,6 @@ const AddAProduct = () => {
                                 toast.error('Product added fail. Please try again')
                             }
                         })
-
                 }
             })
     };
@@ -65,7 +64,7 @@ const AddAProduct = () => {
         <div className='flex justify-center items-center mt-10'>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body">
-                    <h2 className='text-center text-green-500 text-2xl'>Add A Product</h2>
+                    <h2 className='text-center text-orange-500 text-4xl'>Add A Product</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         {/* product name */}
                         <div className="form-control w-full max-w-xs">
@@ -135,7 +134,7 @@ const AddAProduct = () => {
                         <div className="form-control w-full my-4 max-w-xs">
                             <label className="input-group">
                                 <span>Price</span>
-                                <input type="number" placeholder="Per Unit Product Price" className="input input-bordered w-full max-w-xs"
+                                <input type="text" placeholder="Per Unit Product Price" className="input input-bordered w-full max-w-xs"
                                     {...register("price", {
                                         required: {
                                             value: true,
@@ -153,7 +152,7 @@ const AddAProduct = () => {
                         <div className="form-control w-full mt-4 max-w-xs">
                             <label className="input-group">
                                 <span>Image</span>
-                                <input type="file" className="input input-bordered w-full max-w-xs"
+                                <input type="file" className="input justify-center w-full max-w-xs"
                                     {...register("image", {
                                         required: {
                                             value: true,
