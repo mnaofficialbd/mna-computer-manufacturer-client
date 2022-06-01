@@ -11,7 +11,7 @@ const AddAProduct = () => {
     const { isLoading } = useQuery('products', () => { fetch('http://localhost:5000/products').then(res => res.json()) })
 
     const imgStorageKey = 'b81832e42347a65fbc19c2064f308dd5';
-    
+
     const onSubmit = async (data) => {
         const image = data.image[0];
         const formData = new FormData();
@@ -34,24 +34,24 @@ const AddAProduct = () => {
                         img: img
                     }
                     // send data to database
-                    fetch('https://localhost:5000/products',{
-                        method:'POST',
-                        headers:{
+                    fetch('http://localhost:5000/products', {
+                        method: 'POST',
+                        headers: {
                             'content-type': 'application/json',
                             authorization: `Bearer ${localStorage.getItem('accessToken')}`
                         },
                         body: JSON.stringify(product)
                     })
-                    .then(res=>res.json())
-                    .then(inserted=>{
-                        if(inserted.insertedId){
-                            toast.success('Product added successfully')
-                            reset();
-                        }
-                        else{
-                            toast.error('Product added fail. Please try again')
-                        }
-                    })
+                        .then(res => res.json())
+                        .then(inserted => {
+                            if (inserted.insertedId) {
+                                toast.success('Product added successfully')
+                                reset();
+                            }
+                            else {
+                                toast.error('Product added fail. Please try again')
+                            }
+                        })
 
                 }
             })
@@ -62,46 +62,114 @@ const AddAProduct = () => {
     };
 
     return (
-        <div>
-            <h2 className="text-2xl text-center">Add a new Product</h2>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <div className="form-control w-full max-w-xs">
-                    <label className="label">
-                        <span className="label-text">Name</span>
-                    </label>
-                    <input type="text" placeholder="Product Name"
-                        className="input input-bordered w-full max-w-xs"
-                        {...register("name", {
-                            required: {
-                                value: true,
-                                message: 'Name is Required'
-                            }
-                        })} />
-                    <label className="label">
-                        {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
-                    </label>
-                </div>
-                
+        <div className='flex justify-center items-center mt-10'>
+            <div className="card w-96 bg-base-100 shadow-xl">
+                <div className="card-body">
+                    <h2 className='text-center text-green-500 text-2xl'>Add A Product</h2>
+                    <form onSubmit={handleSubmit(onSubmit)}>
+                        {/* product name */}
+                        <div className="form-control w-full max-w-xs">
+                            <label className="input-group">
+                                <span>Name</span>
+                                <input type="text" placeholder="Product Name" className="input input-bordered w-full max-w-xs"
+                                    {...register("name", {
+                                        required: {
+                                            value: true,
+                                            message: 'Provide the product name'
+                                        }
+                                    })} />
+                            </label>
+                            <label className="label">
+                                {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
+                            </label>
+                        </div>
+                        {/* description */}
+                        <div className="form-control w-full max-w-xs">
+                            <label className="input-group">
+                                <span>Description</span>
+                                <input type="text" placeholder="Product Description" className="input input-bordered w-full max-w-xs"
+                                    {...register("description", {
+                                        required: {
+                                            value: true,
+                                            message: 'Provide Product Description'
+                                        }
+                                    })} />
+                            </label>
+                            <label className="label">
+                                {errors.description?.type === 'required' && <span className="label-text-alt text-red-500">{errors.description.message}</span>}
+                            </label>
+                        </div>
+                        {/* available */}
+                        <div className="form-control w-full mb-4 max-w-xs">
+                            <label className="input-group">
+                                <span>Available</span>
+                                <input type="number" placeholder="Available Product" className="input input-bordered w-full max-w-xs"
+                                    {...register("available", {
+                                        required: {
+                                            value: true,
+                                            message: 'Provide Available Product number'
+                                        }
+                                    })} />
+                            </label>
+                            <label>
+                                {errors.available?.type === 'required' && <span className="label-text-alt text-red-700">{errors.available.message}</span>}
+                            </label>
+                        </div>
+                        {/* minimum */}
+                        <div className="form-control w-full my-4 max-w-xs">
+                            <label className="input-group">
+                                <span>Minimum</span>
+                                <input type="number" placeholder="Minimum Product Order" className="input input-bordered w-full max-w-xs"
+                                    {...register("minimum", {
+                                        required: {
+                                            value: true,
+                                            message: 'Provide the Minimum Product order number'
+                                        }
+                                    })} />
+                            </label>
+                            <label>
+                                {errors.minimum?.type === 'required' && <span className="label-text-alt text-red-700">{errors.minimum.message}</span>}
+                            </label>
+                        </div>
+                        {/* price */}
+                        <div className="form-control w-full my-4 max-w-xs">
+                            <label className="input-group">
+                                <span>Price</span>
+                                <input type="number" placeholder="Per Unit Product Price" className="input input-bordered w-full max-w-xs"
+                                    {...register("price", {
+                                        required: {
+                                            value: true,
+                                            message: 'Provide the Per Unit Product Price'
+                                        }
+                                    })} />
+                            </label>
+                            <label>
+                                {errors.price?.type === 'required' && <span className="label-text-alt text-red-700">{errors.price.message}</span>}
+                            </label>
+                        </div>
 
-                <div className="form-control w-full max-w-xs">
-                    <label className="label">
-                        <span className="label-text">Photo</span>
-                    </label>
-                    <input type="file"
-                        className="input input-bordered w-full max-w-xs"
-                        {...register("image", {
-                            required: {
-                                value: true,
-                                message: 'Image is Required'
-                            }
-                        })} />
-                    <label className="label">
-                        {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
-                    </label>
-                </div>
 
-                <input className='btn w-full max-w-xs text-white' type="submit" value='Add' />
-            </form>
+                        {/* image */}
+                        <div className="form-control w-full mt-4 max-w-xs">
+                            <label className="input-group">
+                                <span>Image</span>
+                                <input type="file" className="input input-bordered w-full max-w-xs"
+                                    {...register("image", {
+                                        required: {
+                                            value: true,
+                                            message: 'Product Image is Required'
+                                        }
+                                    })} />
+                            </label>
+                            <label className="label">
+                                {errors.image?.type === 'required' && <span className="label-text-alt text-red-500">{errors.image.message}</span>}
+                            </label>
+                        </div>
+
+                        <input className='btn w-full max-w-xs text-white' type="submit" value='Add Product' />
+                    </form>
+                </div>
+            </div>
         </div>
     );
 };
