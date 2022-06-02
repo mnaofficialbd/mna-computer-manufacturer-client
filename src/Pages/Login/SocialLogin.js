@@ -17,6 +17,7 @@ const SocialLogin = () => {
     if (googleLoading || githubLoading) {
         <Loading />
     }
+    console.log(googleUser);
     
     return (
 

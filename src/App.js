@@ -22,7 +22,7 @@ import MakeAdminPanel from './Pages/Dashboard/MakeAdminPanel';
 
 function App() {
   return (
-    <div>
+    <div className='text-xl'>
       <Navbar/>
         <Routes>
           <Route path='/' element={<Home />} />

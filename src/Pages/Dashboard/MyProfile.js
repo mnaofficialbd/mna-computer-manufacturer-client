@@ -34,13 +34,13 @@ const MyProfile = () => {
                         <div className="form-control w-full max-w-xs my-3">
                             <label className="input-group">
                                 <span>Email</span>
-                                <input type="email" value={user?.email} name='email' className="input input-bordered w-full max-w-xs" required readOnly disabled />
+                                <input type="email" value={user?.email} name='email' className="input text-xl input-bordered w-full max-w-xs" required readOnly disabled />
                             </label>
                         </div>
                         <div className="form-control w-full max-w-xs my-3">
                             <label className="input-group">
                                 <span>Phone</span>
-                                <input type="number" placeholder="Phone" className="input input-bordered w-full max-w-xs"
+                                <input type="number" placeholder="Phone" className="input text-xl input-bordered w-full max-w-xs"
                                     {...register("phone", {
                                         required: {
                                             value: true,
@@ -61,7 +61,7 @@ const MyProfile = () => {
                         <div className="form-control w-full max-w-xs my-3">
                             <label className="input-group">
                                 <span>Education</span>
-                                <input type="text" placeholder="Educational Qualification" className="input input-bordered w-full max-w-xs"
+                                <input type="text" placeholder="Educational Qualification" className="input text-xl input-bordered w-full max-w-xs"
                                     {...register("education", {
                                         required: {
                                             value: true,
@@ -77,7 +77,7 @@ const MyProfile = () => {
                         <div className="form-control w-full max-w-xs my-3">
                             <label className="input-group">
                                 <span>Address</span>
-                                <input type="text" placeholder="Your Address" className="input input-bordered w-full max-w-xs"
+                                <input type="text" placeholder="Your Address" className="input text-xl input-bordered w-full max-w-xs"
                                     {...register("address", {
                                         required: {
                                             value: true,
@@ -93,7 +93,7 @@ const MyProfile = () => {
                         <div className="form-control w-full max-w-xs my-3">
                             <label className="input-group">
                                 <span>LinkedIn</span>
-                                <input type="text" placeholder="LinkedIn Account Link" className="input input-bordered w-full max-w-xs"
+                                <input type="text" placeholder="LinkedIn Account Link" className="input text-xl input-bordered w-full max-w-xs"
                                     {...register("linkedIn", {
                                         required: {
                                             value: true,

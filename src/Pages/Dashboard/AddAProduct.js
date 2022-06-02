@@ -147,7 +147,6 @@ const AddAProduct = () => {
                             </label>
                         </div>
 
-
                         {/* image */}
                         <div className="form-control w-full mt-4 max-w-xs">
                             <label className="input-group">

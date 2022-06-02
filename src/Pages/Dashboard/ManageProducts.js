@@ -1,20 +1,16 @@
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import useProducts from '../../hooks/useProducts';
 import Loading from '../Shared/Loading';
 
 const ManageProducts = () => {
     const [products, setProducts] = useProducts();
-    // const [deletingProduct, setDeletingProduct] = useState(null);
-
 
     const handleDelete = id => {
-        const proceed = window.confirm('Are you sure')
+        const proceed = window.confirm('Are you sure to Delete this product')
         if (proceed) {
             const url = `http://localhost:5000/products/${id}`;
-
             fetch(url, {
                 method: "DELETE",
                 headers: {
@@ -47,14 +43,14 @@ const ManageProducts = () => {
             <div className="overflow-x-auto p-4">
                 <table className="table w-full">
                     <thead>
-                        <tr>
-                            <th>S. No</th>
-                            <th>Avatar</th>
-                            <th>Product / Part</th>
-                            <th>About</th>
-                            <th>Minimum Order</th>
-                            <th>Price (Per Unit)</th>
-                            <th>Delete</th>
+                        <tr className='text-center'>
+                            <th className='text-base'>S. No</th>
+                            <th className='text-base'>Avatar</th>
+                            <th className='text-base'>Product / Part</th>
+                            <th className='text-base'>Description</th>
+                            <th className='text-base'>Min Order</th>
+                            <th className='text-base'>Price <span className='text-sm'>/per</span> </th>
+                            <th className='text-base'>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -68,10 +64,10 @@ const ManageProducts = () => {
                                         </div>
                                     </td>
                                     <td>{product.name}</td>
-                                    <td>{product.description}</td>
-                                    <td>{product.minimum}</td>
-                                    <td>{product.price}</td>
-                                    <td><button
+                                    <td className='text-base'>{product.description}</td>
+                                    <td className='text-center'>{product.minimum}</td>
+                                    <td className='text-center'>{product.price}</td>
+                                    <td className='text-center'><button
                                         onClick={() => handleDelete(product._id)}
                                         className='btn bg-red-500 border-0 h-5'>
                                         <FontAwesomeIcon className='' icon={faTrashAlt}></FontAwesomeIcon>
