@@ -1,11 +1,11 @@
-import React from 'react';
+/* import React from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../../Pages/Shared/Loading';
 import MakeAdminPanel from './MakeAdminPanel';
 
 
 const MakeAdmins = () => {
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/user',{
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/users',{
         method: 'GET',
         headers:{
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -43,4 +43,4 @@ const MakeAdmins = () => {
     );
 };
 
-export default MakeAdmins;
+export default MakeAdmins; */

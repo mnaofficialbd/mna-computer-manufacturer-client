@@ -1,10 +1,26 @@
 import React from 'react';
-// import { toast } from 'react-toastify';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useQuery } from 'react-query';
+import { toast } from 'react-toastify';
+import auth from '../../Firebase/firebase.init';
+import Loading from '../../Pages/Shared/Loading';
 
-const MakeAdminPanel = ({ user, index, refetch }) => {
-    // const { email, role } = user;
-    /* const handleMakeAdmin = () => {
-        fetch(`http://localhost:5000/user/admin/${email}`, {
+
+const MakeAdminPanel = () => {
+    const [user] = useAuthState(auth);
+
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/users', {
+        method: 'GET',
+        headers: {
+            authorization: `Bearer ${localStorage.getItem('accessToken')}`
+        }
+    }).then(res => res.json()))
+    if (isLoading) {
+        return <Loading />
+    }
+
+    const handleMakeAdmin = () => {
+        fetch(`http://localhost:5000/users/admin/${user?.email}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -22,15 +38,35 @@ const MakeAdminPanel = ({ user, index, refetch }) => {
                     toast.success(`Successfully made an Admin`)
                 }
             })
-    } */
+    }
 
     return (
-        <tr>
-            <th>{index + 1}</th>
-            <td>{user?.email}</td>
-            {/* <td>{role !== 'admin' && <button onClick={handleMakeAdmin} className="btn btn-xs">Make Admin</button>}</td> */}
-            <td><button className="btn btn-xs">Remove User</button></td>
-        </tr>
+        <div>
+            <h2 className='text-2xl text-center'>All Users: {users?.length}</h2>
+            <div className="overflow-x-auto">
+                <table className="table w-1/2 mx-auto">
+                    <thead>
+                        <tr>
+                            <th>S. No</th>
+                            <th>User</th>
+                            <th>Admin</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            users?.map((user, index) => <>
+                                <tr>
+                                    <th>{index + 1}</th>
+                                    <td>{user?.email}</td>
+                                    <td>{user?.role !== 'admin' && <button onClick={handleMakeAdmin} className="btn btn-xs">Make Admin</button>}</td>
+                                    {/* <td><button className="btn btn-xs">Remove User</button></td> */}
+                                </tr>
+                            </>)
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
     );
 };
 

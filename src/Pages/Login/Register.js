@@ -3,7 +3,7 @@ import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-fireb
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../Firebase/firebase.init';
-import useToken from '../../hooks/useToken';
+// import useToken from '../../hooks/useToken';
 import Loading from '../Shared/Loading';
 import SocialLogin from './SocialLogin';
 
@@ -11,14 +11,13 @@ const Register = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [createUserWithEmailAndPassword, user, loading] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const [updateProfile, updating] = useUpdateProfile(auth);
-    const [token]=useToken(user)
+    // const [token]=useToken(user)
 
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
 
     const onSubmit = async (data) => {
-        // data.preventDefault();
         await createUserWithEmailAndPassword(data.email, data.password);
         await updateProfile({ displayName: data.name });
         navigate(from, { replace: true })
@@ -27,9 +26,9 @@ const Register = () => {
     if (loading || updating) {
         <Loading />
     }
-    if (token) {
-        navigate('/');
-    }
+    /* if (token) {
+        // navigate('/');
+    } */
     return (
         <div className='flex justify-center items-center h-screen'>
             <div className="card w-96 bg-base-100 shadow-xl">
