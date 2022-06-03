@@ -19,6 +19,7 @@ import ManageAllOrders from './Pages/Dashboard/ManageAllOrders';
 import AddAProduct from './Pages/Dashboard/AddAProduct';
 import RequireAuth from './Pages/Login/RequireAuth';
 import MakeAdminPanel from './Pages/Dashboard/MakeAdminPanel';
+import PurchaseDetail from './Pages/Purchase/PurchaseDetail';
 
 function App() {
   return (
@@ -27,7 +28,8 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
 
-          <Route path='purchase' element={<RequireAuth><Purchase /></RequireAuth>} />
+          <Route path='purchase/:productId' element={<RequireAuth><PurchaseDetail /></RequireAuth>} />
+          <Route path='order/:productId' element={<RequireAuth><Purchase /></RequireAuth>} />
 
           <Route path='dashboard' element={<RequireAuth><Dashboard /></RequireAuth>} >
             <Route index element={<MyProfile/>} />

@@ -1,9 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import useProducts from '../../hooks/useProducts';
 
 const Product = () => {
     const [products] = useProducts();
+    const navigate = useNavigate()
+    const navigateToPurchaseDetail = (id) => {
+        navigate(`/purchase/${id}`)
+    }
 
     return (
         <div className='m-2 p-3'>
@@ -23,10 +27,9 @@ const Product = () => {
 
                             <div className="card-actions justify-center">
                                 <button
+                                    onClick={() => navigateToPurchaseDetail(product._id)}
                                     className="btn btn-outline border-blue-700  w-full max-w-xs my-2">
-                                    <Link to='/purchase'>
-                                        Purchase
-                                    </Link>
+                                    Purchase
                                 </button>
                             </div>
                         </div>
