@@ -10,7 +10,7 @@ const ManageProducts = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure to Delete this product')
         if (proceed) {
-            const url = `http://localhost:5000/products/${id}`;
+            const url = `https://mna-computer-manufacturer.herokuapp.com/products/${id}`;
             fetch(url, {
                 method: "DELETE",
                 headers: {
@@ -26,7 +26,7 @@ const ManageProducts = () => {
         }
     }
 
-    const { isLoading } = useQuery('products', () => fetch('http://localhost:5000/products', {
+    const { isLoading } = useQuery('products', () => fetch('https://mna-computer-manufacturer.herokuapp.com/products', {
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }

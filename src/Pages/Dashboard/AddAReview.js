@@ -10,7 +10,7 @@ const AddAReview = () => {
     const [user] = useAuthState(auth);
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
-    const { isLoading } = useQuery('reviews', () => { fetch('http://localhost:5000/reviews').then(res => res.json()) })
+    const { isLoading } = useQuery('reviews', () => { fetch('https://mna-computer-manufacturer.herokuapp.com/reviews').then(res => res.json()) })
 
     const imgStorageKey = 'b81832e42347a65fbc19c2064f308dd5';
 
@@ -34,7 +34,7 @@ const AddAReview = () => {
                         img: img
                     }
                     // send data to database
-                    fetch('http://localhost:5000/reviews', {
+                    fetch('https://mna-computer-manufacturer.herokuapp.com/reviews', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

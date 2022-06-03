@@ -8,7 +8,7 @@ import Loading from '../../Pages/Shared/Loading';
 const AddAProduct = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
-    const { isLoading } = useQuery('products', () => { fetch('http://localhost:5000/products').then(res => res.json()) })
+    const { isLoading } = useQuery('products', () => { fetch('https://mna-computer-manufacturer.herokuapp.com/products').then(res => res.json()) })
 
     const imgStorageKey = 'b81832e42347a65fbc19c2064f308dd5';
 
@@ -34,7 +34,7 @@ const AddAProduct = () => {
                         img: img
                     }
                     // send data to database
-                    fetch('http://localhost:5000/products', {
+                    fetch('https://mna-computer-manufacturer.herokuapp.com/products', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

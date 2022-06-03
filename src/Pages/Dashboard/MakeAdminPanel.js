@@ -9,7 +9,7 @@ import Loading from '../../Pages/Shared/Loading';
 const MakeAdminPanel = () => {
     const [user] = useAuthState(auth);
 
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/users', {
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://mna-computer-manufacturer.herokuapp.com/users', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -20,7 +20,7 @@ const MakeAdminPanel = () => {
     }
 
     const handleMakeAdmin = () => {
-        fetch(`http://localhost:5000/users/admin/${user?.email}`, {
+        fetch(`https://mna-computer-manufacturer.herokuapp.com/users/admin/${user?.email}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

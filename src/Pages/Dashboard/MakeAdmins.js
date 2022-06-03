@@ -5,7 +5,7 @@ import MakeAdminPanel from './MakeAdminPanel';
 
 
 const MakeAdmins = () => {
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/users',{
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://mna-computer-manufacturer.herokuapp.com/users',{
         method: 'GET',
         headers:{
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
