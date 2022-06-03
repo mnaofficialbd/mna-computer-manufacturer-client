@@ -13,7 +13,7 @@ const PurchaseDetail = () => {
                     <h2>You are Purchase: {product?.name}</h2>
                     <h2>Price far pice: {product?.price}</h2>
                     <div className='text-center'>
-                        <Link to={`/order/${productId}`}>
+                        <Link to={`/orders/${productId}`}>
                             <button className='btn btn-success'>Order</button>
                         </Link>
                     </div>
